@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
+
+    <title>reveal.js</title>
+
+    <link rel="stylesheet" href="dist/reset.css" />
+    <link rel="stylesheet" href="dist/reveal.css" />
+    <!-- <link rel="stylesheet" href="dist/theme/black.css" /> -->
+    <!-- <link rel="stylesheet" href="dist/theme/moon.css" /> -->
+    <!-- <link rel="stylesheet" href="dist/theme/sky.css" /> -->
+    <link rel="stylesheet" href="dist/theme/night.css" />
+
+    <!-- Theme used for syntax highlighted code -->
+    <link rel="stylesheet" href="plugin/highlight/monokai.css" />
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides">
+        <section>
+          <h1>Анимация</h1>
+        </section>
+        <section>
+          <section>
+            <h2>CSS<br />Переходы</h2>
+          </section>
+          <section>
+            <h2>CSS-переходы (transitions)</h2>
+            <p>
+              позволяют задать
+              <span style="color: #1599f3">плавный переход</span> CSS-свойствам,
+              т. е. значения свойств изменяются постепенно в течении
+              определенного (заданного) промежутка вермени
+            </p>
+          </section>
+          <section>
+            <h2>transition-duration</h2>
+            <p style="color: #1599f3">задает длительность эффекта перехода</p>
+            <pre>
+				<code data-trim data-noescape>			
+				selector{
+					transition-duration: 1s; /* Длительность перехода */
+				}
+				</code>
+			</pre>
+            <pre>
+				<code data-trim data-noescape>			
+				transition-duration: <параметры>
+				— <время> [,<время>]* — задается в "s" или "ms"
+				</code>
+			</pre>
+          </section>
+          <section>
+            <h2>transition-delay</h2>
+            <p style="color: #1599f3">
+              задает задержку перед запуском эффекта перехода
+            </p>
+            <pre>
+              <code data-trim data-noescape>			
+              selector{
+                transition-delay: 1s; /* Задержка перед запуском */
+                transition-duration: 2s;
+              }
+              </code>
+            </pre>
+            <pre>
+              <code data-trim data-noescape>			
+              transition-delay: <параметры>
+              — <время> [,<время>]* — задается в "s" или "ms"
+              </code>
+            </pre>
+          </section>
+
+          <section>
+            <h2>transition-property</h2>
+            <p style="color: #1599f3">
+              определяет свойства, к которым будет применен эффект перехода
+            </p>
+            <pre>
+              <code data-trim data-noescape>			
+              selector{
+                transition-property: all; /* По умолчанию all */
+                transition-duration: 1s;
+              }
+              </code>
+            </pre>
+            <pre>
+              <code data-trim data-noescape>			
+              transition-property: <параметры>
+              — none — эффект перехода не будет применен
+              — all — эффект перехода применится ко всем доступным свойствам
+              <свойство> [,<свойство>]* — указывается одно или несколько свойств, к 
+              которым применится эффект перехода
+              </code>
+            </pre>
+          </section>
+          <section>
+            <h2>transition-timing-function</h2>
+            <p style="color: #1599f3">
+              определяет скорость и ускорение изменения значений свойств во
+              время эффекта перехода
+            </p>
+            <pre>
+              <code data-trim data-noescape>			
+              selector{
+                transition-timing-function: ease;  
+                transition-duration: 1s;
+              }
+              </code>
+            </pre>
+          </section>
+          <section>
+            <pre>
+              <h3>transition-timing-function: <параметры></h3>
+              <code data-trim data-noescape>			
+                — linear — скорость перехода одинаковая от начала и до конца
+              </code>
+            </pre>
+            <div class="r-hstack">
+              <div class="body_image" aria-hidden="true">
+                <img src="./img/cubic-bezier-linear.jpg" alt="" />
+              </div>
+              <div style="padding-left: 20px">
+                <p>cubic-bezier(0.0, 0.0, 1.0, 1.0)</p>
+              </div>
+            </div>
+          </section>
+          <section>
+            <pre>
+              <h3>transition-timing-function: <параметры></h3>
+              <code data-trim data-noescape>			
+                — ease — начинается медленно, далее ускорение и к концу замедление
+              </code>
+            </pre>
+            <div class="r-hstack">
+              <div class="body_image" aria-hidden="true">
+                <img src="./img/cubic-bezier-ease.jpg" alt="" />
+              </div>
+              <div style="padding-left: 20px">
+                <p>cubic-bezier(0.25, 0.1, 0.25, 1.0)</p>
+              </div>
+            </div>
+          </section>
+          <section>
+            <pre>
+              <h3>transition-timing-function: <параметры></h3>
+              <code data-trim data-noescape>			
+                — ease-in — начинается медленно, к концу ускорение
+              </code>
+            </pre>
+            <div class="r-hstack">
+              <div class="body_image" aria-hidden="true">
+                <img src="./img/cubic-bezier-ease-in.jpg" alt="" />
+              </div>
+              <div style="padding-left: 20px">
+                <p>cubic-bezier(0.42, 0.0, 1.0, 1.0)</p>
+              </div>
+            </div>
+          </section>
+          <section>
+            <pre>
+              <h3>transition-timing-function: <параметры></h3>
+              <code data-trim data-noescape>			
+                — ease-out — начинается быстро, к концу замедление
+              </code>
+            </pre>
+            <div class="r-hstack">
+              <div class="body_image" aria-hidden="true">
+                <img src="./img/cubic-bezier-ease-out.jpg" alt="" />
+              </div>
+              <div style="padding-left: 20px">
+                <p>cubic-bezier(0.0, 0.0, 0.58, 1.0)</p>
+              </div>
+            </div>
+          </section>
+
+          <section>
+            <pre>
+              <h3>transition-timing-function: <параметры></h3>
+              <code data-trim data-noescape>			
+                — ease-in-out — начинается и заканчивается медленно
+              </code>
+            </pre>
+            <div class="r-hstack">
+              <div class="body_image" aria-hidden="true">
+                <img src="./img/cubic-bezier-ease-in-out.jpg" alt="" />
+              </div>
+              <div style="padding-left: 20px">
+                <p>cubic-bezier(0.42, 0.0, 0.58, 1.0)</p>
+              </div>
+            </div>
+          </section>
+          <section>
+            <h2>Полезные сервисы:</h2>
+            <p>
+              —
+              <a href="https://cubic-bezier.com" target="_blank"
+                >cubic-bezier.com</a
+              >
+              — сервис, предоставляющий возможность быстро сгенерировать кривую
+              Безье
+            </p>
+            <p>
+              — <a href="https://easings.net" target="_blank">easings.net</a> —
+              коллекция разных easing-функций на основе кривых Безье
+            </p>
+          </section>
+          <section>
+            <h2>transition</h2>
+            <pre>
+              <code data-trim data-noescape>			
+              selector{
+                transition: all 1s linear .25s;
+              }
+              </code>
+            </pre>
+            <pre>
+              <code data-trim data-noescape>			
+              transition: <параметры>
+              — none — отменяет переход
+              — порядок записи свойств:
+                1.transition-property
+                2.transition-duration
+                3.transition-timing-function
+                4.transition-delay
+
+              </code>
+            </pre>
+          </section>
+          <section>
+            <h2>Спасибо за внимание!</h2>
+          </section>
+        </section>
+
+        <section>Slide 3</section>
+      </div>
+    </div>
+
+    <script src="dist/reveal.js"></script>
+    <script src="plugin/notes/notes.js"></script>
+    <script src="plugin/markdown/markdown.js"></script>
+    <script src="plugin/highlight/highlight.js"></script>
+    <script>
+      // More info about initialization & config:
+      // - https://revealjs.com/initialization/
+      // - https://revealjs.com/config/
+      Reveal.initialize({
+        hash: true,
+
+        // Learn about plugins: https://revealjs.com/plugins/
+        plugins: [RevealMarkdown, RevealHighlight, RevealNotes],
+      });
+    </script>
+  </body>
+</html>
