@@ -23,220 +23,185 @@
     <div class="reveal">
       <div class="slides">
         <section>
-          <h1>Анимация</h1>
+          <h1>CSS Flexbox</h1>
         </section>
         <section>
-          <section>
-            <h2>CSS<br />Переходы</h2>
-          </section>
-          <section>
-            <h2>CSS-переходы (transitions)</h2>
-            <p>
-              позволяют задать
-              <span style="color: #1599f3">плавный переход</span> CSS-свойствам,
-              т. е. значения свойств изменяются постепенно в течении
-              определенного (заданного) промежутка вермени
-            </p>
-          </section>
-          <section>
-            <h2>transition-duration</h2>
-            <p style="color: #1599f3">задает длительность эффекта перехода</p>
-            <pre>
-				<code data-trim data-noescape>			
-				selector{
-					transition-duration: 1s; /* Длительность перехода */
-				}
-				</code>
-			</pre>
-            <pre>
-				<code data-trim data-noescape>			
-				transition-duration: <параметры>
-				— <время> [,<время>]* — задается в "s" или "ms"
-				</code>
-			</pre>
-          </section>
-          <section>
-            <h2>transition-delay</h2>
-            <p style="color: #1599f3">
-              задает задержку перед запуском эффекта перехода
-            </p>
-            <pre>
-              <code data-trim data-noescape>			
-              selector{
-                transition-delay: 1s; /* Задержка перед запуском */
-                transition-duration: 2s;
-              }
-              </code>
-            </pre>
-            <pre>
-              <code data-trim data-noescape>			
-              transition-delay: <параметры>
-              — <время> [,<время>]* — задается в "s" или "ms"
-              </code>
-            </pre>
-          </section>
-
-          <section>
-            <h2>transition-property</h2>
-            <p style="color: #1599f3">
-              определяет свойства, к которым будет применен эффект перехода
-            </p>
-            <pre>
-              <code data-trim data-noescape>			
-              selector{
-                transition-property: all; /* По умолчанию all */
-                transition-duration: 1s;
-              }
-              </code>
-            </pre>
-            <pre>
-              <code data-trim data-noescape>			
-              transition-property: <параметры>
-              — none — эффект перехода не будет применен
-              — all — эффект перехода применится ко всем доступным свойствам
-              <свойство> [,<свойство>]* — указывается одно или несколько свойств, к 
-              которым применится эффект перехода
-              </code>
-            </pre>
-          </section>
-          <section>
-            <h2>transition-timing-function</h2>
-            <p style="color: #1599f3">
-              определяет скорость и ускорение изменения значений свойств во
-              время эффекта перехода
-            </p>
-            <pre>
-              <code data-trim data-noescape>			
-              selector{
-                transition-timing-function: ease;  
-                transition-duration: 1s;
-              }
-              </code>
-            </pre>
-          </section>
-          <section>
-            <pre>
-              <h3>transition-timing-function: <параметры></h3>
-              <code data-trim data-noescape>			
-                — linear — скорость перехода одинаковая от начала и до конца
-              </code>
-            </pre>
-            <div class="r-hstack">
-              <div class="body_image" aria-hidden="true">
-                <img src="./img/cubic-bezier-linear.jpg" alt="" />
-              </div>
-              <div style="padding-left: 20px">
-                <p>cubic-bezier(0.0, 0.0, 1.0, 1.0)</p>
-              </div>
-            </div>
-          </section>
-          <section>
-            <pre>
-              <h3>transition-timing-function: <параметры></h3>
-              <code data-trim data-noescape>			
-                — ease — начинается медленно, далее ускорение и к концу замедление
-              </code>
-            </pre>
-            <div class="r-hstack">
-              <div class="body_image" aria-hidden="true">
-                <img src="./img/cubic-bezier-ease.jpg" alt="" />
-              </div>
-              <div style="padding-left: 20px">
-                <p>cubic-bezier(0.25, 0.1, 0.25, 1.0)</p>
-              </div>
-            </div>
-          </section>
-          <section>
-            <pre>
-              <h3>transition-timing-function: <параметры></h3>
-              <code data-trim data-noescape>			
-                — ease-in — начинается медленно, к концу ускорение
-              </code>
-            </pre>
-            <div class="r-hstack">
-              <div class="body_image" aria-hidden="true">
-                <img src="./img/cubic-bezier-ease-in.jpg" alt="" />
-              </div>
-              <div style="padding-left: 20px">
-                <p>cubic-bezier(0.42, 0.0, 1.0, 1.0)</p>
-              </div>
-            </div>
-          </section>
-          <section>
-            <pre>
-              <h3>transition-timing-function: <параметры></h3>
-              <code data-trim data-noescape>			
-                — ease-out — начинается быстро, к концу замедление
-              </code>
-            </pre>
-            <div class="r-hstack">
-              <div class="body_image" aria-hidden="true">
-                <img src="./img/cubic-bezier-ease-out.jpg" alt="" />
-              </div>
-              <div style="padding-left: 20px">
-                <p>cubic-bezier(0.0, 0.0, 0.58, 1.0)</p>
-              </div>
-            </div>
-          </section>
-
-          <section>
-            <pre>
-              <h3>transition-timing-function: <параметры></h3>
-              <code data-trim data-noescape>			
-                — ease-in-out — начинается и заканчивается медленно
-              </code>
-            </pre>
-            <div class="r-hstack">
-              <div class="body_image" aria-hidden="true">
-                <img src="./img/cubic-bezier-ease-in-out.jpg" alt="" />
-              </div>
-              <div style="padding-left: 20px">
-                <p>cubic-bezier(0.42, 0.0, 0.58, 1.0)</p>
-              </div>
-            </div>
-          </section>
-          <section>
-            <h2>Полезные сервисы:</h2>
-            <p>
-              —
-              <a href="https://cubic-bezier.com" target="_blank"
-                >cubic-bezier.com</a
-              >
-              — сервис, предоставляющий возможность быстро сгенерировать кривую
-              Безье
-            </p>
-            <p>
-              — <a href="https://easings.net" target="_blank">easings.net</a> —
-              коллекция разных easing-функций на основе кривых Безье
-            </p>
-          </section>
-          <section>
-            <h2>transition</h2>
-            <pre>
-              <code data-trim data-noescape>			
-              selector{
-                transition: all 1s linear .25s;
-              }
-              </code>
-            </pre>
-            <pre>
-              <code data-trim data-noescape>			
-              transition: <параметры>
-              — none — отменяет переход
-              — порядок записи свойств:
-                1.transition-property
-                2.transition-duration
-                3.transition-timing-function
-                4.transition-delay
-
-              </code>
-            </pre>
-          </section>
-          <section>
-            <h2>Спасибо за внимание!</h2>
-          </section>
+          <p>
+            <b>CSS flexbox</b> — это технология для создания сложных гибких
+            макетов за счёт правильного размещения элементов на странице.
+          </p>
+        </section>
+        <section>
+          <p>
+            <b>CSS flexbox</b> (Flexible Box Layout Module) — модуль макета
+            гибкого контейнера — представляет собой способ компоновки элементов,
+            в основе лежит идея оси..
+          </p>
         </section>
 
+        <section>
+          Flexbox состоит из <b>гибкого контейнера (flex container)</b> и
+          <b>гибких элементов (flex items)</b>. Гибкие элементы могут
+          выстраиваться в строку или столбик, а оставшееся свободное
+          пространство распределяется между ними различными способами.
+        </section>
+
+        <section>
+          <p>Модуль flexbox позволяет решать следующие задачи:</p>
+          <ul style="font-size: 28px">
+            <li>
+              Располагать элементы в одном из четырех направлений: слева
+              направо, справа налево, сверху вниз или снизу вверх.
+            </li>
+            <li>Переопределять порядок отображения элементов.</li>
+            <li>
+              Автоматически определять размеры элементов таким образом, чтобы
+              они вписывались в доступное пространство.
+            </li>
+            <li>
+              Решать проблему с горизонтальным и вертикальным центрированием.
+            </li>
+            <li>
+              Переносить элементы внутри контейнера, не допуская его
+              переполнения.
+            </li>
+            <li>Создавать колонки одинаковой высоты.</li>
+            <li>Создавать прижатый к низу страницы подвал сайта.</li>
+          </ul>
+        </section>
+        <section>
+          <h3>Свойства для Родителя (flex контейнер)</h3>
+          <p>
+            Определяет flex контейнер; inline или block в зависимости от
+            заданного значения. Включает flex контекст для всех потомков первого
+            уровня.
+          </p>
+          <pre>
+              <code data-trim data-noescape>	
+                .container {
+                  display: flex; /* or inline-flex */
+                }     
+              </code>
+          </pre>
+        </section>
+        <section>
+          <p>
+            Когда мы задаём какому-то элементу значение <b>flex</b> для свойства
+            <b>display</b>, мы превращаем этот элемент в флекс-контейнер. Внутри
+            него начинает действовать флекс-контекст, его дочерние элементы
+            начинают подчиняться свойствам флексбокса.
+          </p>
+        </section>
+        <section>
+          <pre>
+              <code data-trim data-noescape>	
+                .container {
+                  display: flex; /* or inline-flex */
+                }     
+              </code>
+          </pre>
+          <img src="./img/flex/1.gif" alt="" />
+        </section>
+        <section>
+          <h3>flex-direction</h3>
+          <p>
+            У flex-контейнера есть две оси: главная и перпендикулярная ей. По
+            умолчанию все предметы располагаются вдоль главной оси — слева
+            направо. Именно поэтому блоки в предыдущем примере выстроились в
+            линию, когда мы применили display: flex. А вот flex-direction
+            позволяет вращать главную ось.
+          </p>
+        </section>
+        <section>
+          <img src="./img/flex/axes.webp" alt="" />
+        </section>
+        <section>
+          <pre>
+              <code data-trim data-noescape>	
+                .container {  
+                  display: flex;  
+                  flex-direction: column;
+                }    
+              </code>
+          </pre>
+          <img src="./img/flex/2.gif" alt="" />
+          <p style="font-size: 24px">
+            Обратите внимание, что flex-direction: column не выравнивает блоки
+            по оси, перпендикулярной главной. Главная ось сама меняет своё
+            расположение, и теперь направлена сверху вниз.Есть ещё парочка
+            свойств для flex-direction: row-reverse и column-reverse.
+          </p>
+        </section>
+        <section>
+          <h3>justify-content</h3>
+          <p>Отвечает за выравнивание элементов по главной оси:</p>
+          <pre>
+              <code data-trim data-noescape>	
+                .container {  
+                  display: flex;  
+                  flex-direction: row;  
+                  justify-content: flex-start;
+                }  
+              </code>
+          </pre>
+        </section>
+        <section>
+          <p><b>Justify-content</b> может принимать 5 значений:</p>
+          <ul style="font-size: 24px">
+            <li>flex-start</li>
+            <li>flex-end</li>
+            <li>center</li>
+            <li>space-between</li>
+            <li>space-around</li>
+          </ul>
+          <div>
+            <img src="./img/flex/3.gif" alt="" />
+          </div>
+          <p style="font-size: 24px">
+            Space-between задаёт одинаковое расстояние между блоками, но не
+            между контейнером и блоками. Space-around также задаёт одинаковое
+            расстояние между блоками, но теперь расстояние между контейнером и
+            блоками равно половине расстояния между блоками.
+          </p>
+        </section>
+        <section>
+          <h3>align-items</h3>
+          <p>
+            Если justify-content работает с главной осью, то align-items
+            работает с осью, перпендикулярной главной оси.
+          </p>
+        </section>
+        <section>
+          <ul>
+            <li>flex-start</li>
+            <li>flex-end</li>
+            <li>center</li>
+            <li>stretch</li>
+            <li>baseline</li>
+          </ul>
+          <div>
+            <img src="./img/flex/4.gif" alt="" />
+          </div>
+        </section>
+
+        <section>
+          <img src="./img/flex/5.gif" alt="" />
+        </section>
+        <section>
+          <h3>align-self</h3>
+          <p>Позволяет выравнивать элементы по отдельности:</p>
+          <pre>
+              <code data-trim data-noescape>	
+                .container {  
+                  align-items: flex-start;
+                }
+                .square#one {
+                  align-self: center;
+                }
+              </code>
+          </pre>
+          <img src="./img/flex/6.gif" alt="" />
+        </section>
         <section>Slide 3</section>
       </div>
     </div>
